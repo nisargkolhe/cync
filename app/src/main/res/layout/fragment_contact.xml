@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/material_drawer_background"
+    android:weightSum="2"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_weight="1">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Contact Us"
+            android:id="@+id/textView5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="38dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="#0f0f0f" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:id="@+id/txtEmail"
+            android:layout_below="@+id/textView5"
+            android:layout_centerHorizontal="true" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:id="@+id/txtQuery"
+            android:layout_below="@+id/txtEmail"
+            android:layout_alignLeft="@+id/txtEmail"
+            android:layout_alignStart="@+id/txtEmail" />
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:id="@+id/button"
+            android:layout_weight="1"
+            android:layout_below="@+id/txtQuery"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorPrimary"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblEmail"
+            android:text="Email:"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblEmailCon"
+            android:text="admin@clubcypher.com"
+            android:layout_below="@+id/lblEmail"
+            android:textAlignment="center"
+            android:layout_margin="15dp"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblPhone"
+            android:text="Phone:"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:layout_below="@+id/lblEmailCon"
+            android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblPhoneCon"
+            android:text="Anurag Sehgal(HOD Comp. Sci.) : 123-4567"
+            android:layout_below="@+id/lblPhone"
+            android:textAlignment="center"
+            android:layout_margin="15dp"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+
+
+</LinearLayout>
+
