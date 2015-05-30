@@ -29,4 +29,11 @@
         <item name="spinBars">true</item>
         <item name="color">@android:color/white</item>
     </style>
+
+    <style name="RespawnTheme" parent="MaterialDrawerTheme.Light.DarkToolbar">
+        <item name="colorPrimary">@color/ResPrimary</item>
+        <item name="colorPrimaryDark">@color/ResPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor">@color/ResPrimary</item>
+    </style>
 </resources>

@@ -2,6 +2,9 @@ package com.clubcypher.cync;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -29,15 +32,17 @@ public class MainActivity extends AppCompatActivity {
 
     Bundle bndl = new Bundle();
 
+    Fragment fragment = new HomeFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        fragment.setRetainInstance(true);
 
         result = new DrawerBuilder(this)
                 //this layout have to contain child layouts
@@ -68,11 +73,16 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .withSavedInstance(savedInstanceState)
                 .build();
-        Fragment fragment = new HomeFragment();
-        FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.frame_container, fragment).commit();
+
+        if (savedInstanceState == null) {
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.frame_container, fragment).commit();
+        }
+
     }
+
+
 
 
     public String getEventName(int id){
@@ -116,62 +126,121 @@ public class MainActivity extends AppCompatActivity {
             case 0:
                 fragment = new HomeFragment();
                 toolbar.setTitle("(c)ync");
+                toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
+                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+                }
                 break;
+
             case 2:
                 bndl.putFloat("eventid", 1);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
                 toolbar.setTitle(getEventName(1));
+                toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.CodePrimary)));
+                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.CodePrimary));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.CodePrimaryDark));
+                }
                 break;
             case 3:
                 bndl.putFloat("eventid", 2);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
                 toolbar.setTitle(getEventName(2));
+                toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.DecPrimary)));
+                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.DecPrimary));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.DecPrimaryDark));
+                }
                 break;
             case 4:
                 bndl.putFloat("eventid", 3);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
                 toolbar.setTitle(getEventName(3));
+                toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.ClkPrimary)));
+                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.ClkPrimary));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.ClkPrimaryDark));
+                }
                 break;
             case 5:
                 bndl.putFloat("eventid", 4);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
                 toolbar.setTitle(getEventName(4));
+                toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.CrePrimary)));
+                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.CrePrimary));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.CrePrimaryDark));
+                }
                 break;
             case 6:
                 bndl.putFloat("eventid", 5);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
                 toolbar.setTitle(getEventName(5));
+                //ActionBar bar = getActionBar();
+                toolbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF5722")));
+                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.ResPrimary));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.ResPrimaryDark));
+                }
+
+                //getActivity().setTheme(R.style.RespawnTheme);
                 break;
             case 7:
                 bndl.putFloat("eventid", 6);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
                 toolbar.setTitle(getEventName(6));
+                toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.CrsPrimary)));
+                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.CrsPrimary));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.CrsPrimaryDark));
+                }
                 break;
             case 8:
                 bndl.putFloat("eventid", 7);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
                 toolbar.setTitle(getEventName(7));
+                toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.CynPrimary)));
+                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.CynPrimary));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.CynPrimaryDark));
+                }
                 break;
             case 9:
                 bndl.putFloat("eventid", 8);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
                 toolbar.setTitle(getEventName(8));
+                toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.SrpPrimary)));
+                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.SrpPrimary));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.SrpPrimaryDark));
+                }
                 break;
             case 11:
                 fragment = new ContactFragment();
                 toolbar.setTitle("Contact Us");
+                toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
+                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+                }
                 break;
             case 12:
                 fragment = new ResultsFragment();
                 toolbar.setTitle("Results");
+                toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
+                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+                }
                 break;
 
             default:

@@ -8,4 +8,36 @@
     <!-- overwrite the selected colors because the primary color is to dark -->
     <color name="material_drawer_selected_text">#536EEA</color>
     <color name="material_drawer_dark_selected_text">#536EEA</color>
+
+    <!--RESPAWN-->
+    <color name="ResPrimary">#FF5722</color>
+    <color name="ResPrimaryDark">#E64A19</color>
+
+    <!--CODE-->
+    <color name="CodePrimary">#673AB7</color>
+    <color name="CodePrimaryDark">#512DA8</color>
+
+    <!--DECYPHER-->
+    <color name="DecPrimary">#009688</color>
+    <color name="DecPrimaryDark">#00796B</color>
+
+    <!--CREATION-->
+    <color name="CrePrimary">#E91E63</color>
+    <color name="CrePrimaryDark">#C2185B</color>
+
+    <!--CROSSWORD-->
+    <color name="CrsPrimary">#607D8B</color>
+    <color name="CrsPrimaryDark">#455A64</color>
+
+    <!--SURPRISE-->
+    <color name="SrpPrimary">#F44336</color>
+    <color name="SrpPrimaryDark">#D32F2F</color>
+
+    <!--CLICK-->
+    <color name="ClkPrimary">#4CAF50</color>
+    <color name="ClkPrimaryDark">#388E3C</color>
+
+    <!--CYNTH-->
+    <color name="CynPrimary">#FFEB3B</color>
+    <color name="CynPrimaryDark">#FBC02D</color>
 </resources>
