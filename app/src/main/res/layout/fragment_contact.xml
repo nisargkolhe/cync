@@ -29,7 +29,8 @@
             android:padding="15dp"
             android:id="@+id/txtEmail"
             android:layout_below="@+id/textView5"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:hint="Email" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,7 +38,8 @@
             android:id="@+id/txtQuery"
             android:layout_below="@+id/txtEmail"
             android:layout_alignLeft="@+id/txtEmail"
-            android:layout_alignStart="@+id/txtEmail" />
+            android:layout_alignStart="@+id/txtEmail"
+            android:hint="Your Query" />
         <com.gc.materialdesign.views.ButtonRectangle
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

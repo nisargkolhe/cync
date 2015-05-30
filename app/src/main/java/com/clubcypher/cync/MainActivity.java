@@ -25,15 +25,19 @@ public class MainActivity extends AppCompatActivity {
     //save our header or result
     private Drawer result = null;
     // Handle Toolbar
+    Toolbar toolbar;
 
+    Bundle bndl = new Bundle();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
         result = new DrawerBuilder(this)
                 //this layout have to contain child layouts
@@ -42,8 +46,6 @@ public class MainActivity extends AppCompatActivity {
                 .withActionBarDrawerToggleAnimated(true)
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName("Home").withIcon(FontAwesome.Icon.faw_home),
-                        //new PrimaryDrawerItem().withName("Play").withIcon(FontAwesome.Icon.faw_gamepad),
-                        //new PrimaryDrawerItem().withName("Custom").withIcon(FontAwesome.Icon.faw_eye),
                         new SectionDrawerItem().withName("Events"),
                         new SecondaryDrawerItem().withName("(c)ode").withIcon(FontAwesome.Icon.faw_code),
                         new SecondaryDrawerItem().withName("Decypher").withIcon(FontAwesome.Icon.faw_search),
@@ -53,9 +55,6 @@ public class MainActivity extends AppCompatActivity {
                         new SecondaryDrawerItem().withName("(c)ryptic (c)rossword").withIcon(FontAwesome.Icon.faw_puzzle_piece),
                         new SecondaryDrawerItem().withName("(c)ynth").withIcon(FontAwesome.Icon.faw_music),
                         new SecondaryDrawerItem().withName("Surprise Event").withIcon(FontAwesome.Icon.faw_question_circle),
-                        //new SecondaryDrawerItem().withName("Settings").withIcon(FontAwesome.Icon.faw_cog),
-                        //new SecondaryDrawerItem().withName("Help").withIcon(FontAwesome.Icon.faw_question).setEnabled(false),
-                        //new SecondaryDrawerItem().withName(R.string.drawer_item_open_source).withIcon(FontAwesome.Icon.faw_github),
                         new DividerDrawerItem(),
                         new PrimaryDrawerItem().withName("Contact").withIcon(FontAwesome.Icon.faw_bullhorn),
                         new PrimaryDrawerItem().withName("Results").withIcon(FontAwesome.Icon.faw_list)
@@ -75,6 +74,38 @@ public class MainActivity extends AppCompatActivity {
                 .replace(R.id.frame_container, fragment).commit();
     }
 
+
+    public String getEventName(int id){
+        String eventName="(c)ync";
+        switch (id){
+            case 1:
+                eventName = "(c)ode";
+                break;
+            case 2:
+                eventName = "Decypher";
+                break;
+            case 3:
+                eventName = "(c)lick";
+                break;
+            case 4:
+                eventName = "(c)reation";
+                break;
+            case 5:
+                eventName = "Respawn";
+                break;
+            case 6:
+                eventName = "(c)yptic crossword";
+                break;
+            case 7:
+                eventName = "(c)ynth";
+                break;
+            case 8:
+                eventName = "Suprise Event";
+                break;
+
+        }
+        return eventName;
+    }
     /**
      * Diplaying fragment view for selected nav drawer list item
      * */
@@ -82,27 +113,65 @@ public class MainActivity extends AppCompatActivity {
         // update the main content by replacing fragments
         Fragment fragment = null;
         switch (position) {
-            /*
-            case 1:
-                fragment = new FindPeopleFragment();
-                break;
-            case 2:
-                fragment = new PhotosFragment();
-                break;
-            case 3:
-                fragment = new CommunityFragment();
-                break;
-            case 4:
-                fragment = new PagesFragment();
-                break;*/
             case 0:
                 fragment = new HomeFragment();
+                toolbar.setTitle("(c)ync");
+                break;
+            case 2:
+                bndl.putFloat("eventid", 1);
+                fragment = new EventFragment();
+                fragment.setArguments(bndl);
+                toolbar.setTitle(getEventName(1));
+                break;
+            case 3:
+                bndl.putFloat("eventid", 2);
+                fragment = new EventFragment();
+                fragment.setArguments(bndl);
+                toolbar.setTitle(getEventName(2));
+                break;
+            case 4:
+                bndl.putFloat("eventid", 3);
+                fragment = new EventFragment();
+                fragment.setArguments(bndl);
+                toolbar.setTitle(getEventName(3));
+                break;
+            case 5:
+                bndl.putFloat("eventid", 4);
+                fragment = new EventFragment();
+                fragment.setArguments(bndl);
+                toolbar.setTitle(getEventName(4));
+                break;
+            case 6:
+                bndl.putFloat("eventid", 5);
+                fragment = new EventFragment();
+                fragment.setArguments(bndl);
+                toolbar.setTitle(getEventName(5));
+                break;
+            case 7:
+                bndl.putFloat("eventid", 6);
+                fragment = new EventFragment();
+                fragment.setArguments(bndl);
+                toolbar.setTitle(getEventName(6));
+                break;
+            case 8:
+                bndl.putFloat("eventid", 7);
+                fragment = new EventFragment();
+                fragment.setArguments(bndl);
+                toolbar.setTitle(getEventName(7));
+                break;
+            case 9:
+                bndl.putFloat("eventid", 8);
+                fragment = new EventFragment();
+                fragment.setArguments(bndl);
+                toolbar.setTitle(getEventName(8));
                 break;
             case 11:
                 fragment = new ContactFragment();
+                toolbar.setTitle("Contact Us");
                 break;
             case 12:
                 fragment = new ResultsFragment();
+                toolbar.setTitle("Results");
                 break;
 
             default:
