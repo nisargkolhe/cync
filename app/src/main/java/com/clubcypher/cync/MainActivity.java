@@ -57,12 +57,15 @@ public class MainActivity extends AppCompatActivity {
                         new SecondaryDrawerItem().withName("(c)lick").withIcon(FontAwesome.Icon.faw_camera),
                         new SecondaryDrawerItem().withName("(c)reation").withIcon(FontAwesome.Icon.faw_paint_brush),
                         new SecondaryDrawerItem().withName("Respawn").withIcon(FontAwesome.Icon.faw_gamepad),
-                        new SecondaryDrawerItem().withName("(c)ryptic (c)rossword").withIcon(FontAwesome.Icon.faw_puzzle_piece),
+                        new SecondaryDrawerItem().withName("(c)rypt(c)ross").withIcon(FontAwesome.Icon.faw_puzzle_piece),
                         new SecondaryDrawerItem().withName("(c)ynth").withIcon(FontAwesome.Icon.faw_music),
                         new SecondaryDrawerItem().withName("Surprise Event").withIcon(FontAwesome.Icon.faw_question_circle),
                         new DividerDrawerItem(),
                         new PrimaryDrawerItem().withName("Contact").withIcon(FontAwesome.Icon.faw_bullhorn),
-                        new PrimaryDrawerItem().withName("Results").withIcon(FontAwesome.Icon.faw_list)
+                        new PrimaryDrawerItem().withName("Results").withIcon(FontAwesome.Icon.faw_list),
+                        new DividerDrawerItem(),
+                        new PrimaryDrawerItem().withName("Registrations").withIcon(FontAwesome.Icon.faw_check_square_o)
+
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -242,7 +245,15 @@ public class MainActivity extends AppCompatActivity {
                     getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
                 }
                 break;
-
+            case 14:
+                fragment = new RegisFragment();
+                toolbar.setTitle("Registrations");
+                toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
+                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+                }
+                break;
             default:
                 break;
         }
