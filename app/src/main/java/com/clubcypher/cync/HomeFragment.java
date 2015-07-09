@@ -43,8 +43,16 @@ public class HomeFragment extends Fragment {
 
     private void initializeData(){
         events = new ArrayList<>();
-        events.add(new Event("Decypher",R.drawable.decypherposter));
-        events.add(new Event("Code",R.drawable.codeposter));
+        events.add(new Event("(c)ode",R.drawable.codeposter,"The Programming Event"));
+        events.add(new Event("Respawn",R.drawable.respawnposter,"The Gaming Event"));
+        events.add(new Event("(c)lick",R.drawable.clickposter,"The Photography Event"));
+        events.add(new Event("(c)reation",R.drawable.creationposter,"The Graphic Designing Event"));
+        events.add(new Event("(c)rypt(c)ross",R.drawable.ccposter,"Cryptic Crossword"));
+        events.add(new Event("(c)ynth",R.drawable.cynthposter,"The EDM Making Event"));
+        events.add(new Event("Decypher",R.drawable.decypherposter,"The Online Cryptic Hunt"));
+        events.add(new Event("Suprise Event",R.drawable.thposter,"???"));
+
+
 
     }
 

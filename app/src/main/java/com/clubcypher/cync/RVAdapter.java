@@ -17,12 +17,14 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.EventViewHolder> {
     public static class EventViewHolder extends RecyclerView.ViewHolder {
         CardView cv;
         TextView name;
+        TextView desc;
         ImageView poster;
 
         EventViewHolder(View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.cv);
             name = (TextView)itemView.findViewById(R.id.title);
+            desc = (TextView)itemView.findViewById(R.id.desc);
             poster = (ImageView)itemView.findViewById(R.id.poster);
         }
     }
@@ -48,6 +50,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.EventViewHolder> {
     @Override
     public void onBindViewHolder(EventViewHolder eventViewHolder, int i) {
         eventViewHolder.name.setText(events.get(i).name);
+        eventViewHolder.desc.setText(events.get(i).desc);
         eventViewHolder.poster.setImageResource(events.get(i).imgid);
     }
 

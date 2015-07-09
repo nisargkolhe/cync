@@ -27,7 +27,7 @@ public class RegisFragment extends Fragment {
 
         webView = (WebView) rootView.findViewById(R.id.webView1);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("http://cync.clubcypher.com/#register");
+        webView.loadUrl("http://cync.clubcypher.com/");
         return rootView;
     }
 

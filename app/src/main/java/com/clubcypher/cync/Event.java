@@ -5,11 +5,13 @@ package com.clubcypher.cync;
  */
 class Event {
     String name;
+    String desc;
     int imgid;
 
-    Event(String name, int imgid){
+    Event(String name, int imgid, String desc){
         this.name = name;
         this.imgid = imgid;
+        this.desc = desc;
     }
 }
 
