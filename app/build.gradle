@@ -18,6 +18,9 @@ android {
         }
     }
 }
+repositories {
+    jcenter()
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -28,5 +31,6 @@ dependencies {
         transitive = true
     }
     compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
+    compile 'jp.wasabeef:recyclerview-animators:1.2.1@aar'
 
 }

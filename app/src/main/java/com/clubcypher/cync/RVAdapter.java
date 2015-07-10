@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -14,20 +15,35 @@ import java.util.List;
  * Created by nisargkolhe on 7/9/15.
  */
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.EventViewHolder> {
-    public static class EventViewHolder extends RecyclerView.ViewHolder {
-        CardView cv;
-        TextView name;
-        TextView desc;
-        ImageView poster;
 
-        EventViewHolder(View itemView) {
+    OnItemClickListener mItemClickListener;
+
+    public static class EventViewHolder extends RecyclerView.ViewHolder {
+        public CardView cv;
+        public TextView name;
+        public TextView desc;
+        public ImageView poster;
+        public View view;
+        public Event currentEvent;
+
+        public EventViewHolder(View itemView) {
             super(itemView);
+            view = itemView;
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View v) {
+                    // item clicked
+                    Toast.makeText(v.getContext(), currentEvent.name, Toast.LENGTH_SHORT).show();
+                }
+            });
             cv = (CardView)itemView.findViewById(R.id.cv);
             name = (TextView)itemView.findViewById(R.id.title);
             desc = (TextView)itemView.findViewById(R.id.desc);
             poster = (ImageView)itemView.findViewById(R.id.poster);
         }
+
+
     }
+
 
     List<Event> events;
 
@@ -52,6 +68,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.EventViewHolder> {
         eventViewHolder.name.setText(events.get(i).name);
         eventViewHolder.desc.setText(events.get(i).desc);
         eventViewHolder.poster.setImageResource(events.get(i).imgid);
+        eventViewHolder.currentEvent = events.get(i);
     }
 
 
@@ -59,4 +76,33 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.EventViewHolder> {
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView name,desc;
+        ImageView img;
+        public ViewHolder(View itemView) {
+            super(itemView);
+            name = (TextView)itemView.findViewById(R.id.name);
+            desc = (TextView)itemView.findViewById(R.id.desc);
+            img = (ImageView)itemView.findViewById(R.id.poster);
+            itemView.setOnClickListener(this);
+        }
+
+
+        @Override
+        public void onClick(View v) {
+            mItemClickListener.onItemClick(v, getPosition()); //OnItemClickListener mItemClickListener;
+        }
+
+
+    }
+
+    public interface OnItemClickListener {
+        public void onItemClick(View view , int position);
+    }
+
+    public void SetOnItemClickListener(final OnItemClickListener mItemClickListener){
+        this.mItemClickListener = mItemClickListener;
+    }
+
 }

@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Diplaying fragment view for selected nav drawer list item
      * */
-    private void displayView(int position) {
+    public void displayView(int position) {
         // update the main content by replacing fragments
         Fragment fragment = null;
         switch (position) {

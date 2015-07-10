@@ -4,12 +4,16 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
+import jp.wasabeef.recyclerview.animators.adapters.AlphaInAnimationAdapter;
 
 /**
  * Created by nisargkolhe on 5/29/15.
@@ -25,13 +29,15 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
         rv = (RecyclerView)rootView.findViewById(R.id.rv);
         rv.setHasFixedSize(true);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity().getApplicationContext());
         rv.setLayoutManager(llm);
+
+        rv.setItemAnimator(new SlideInUpAnimator());
 
         initializeData();
         initializeAdapter();
@@ -40,6 +46,8 @@ public class HomeFragment extends Fragment {
 
         return rootView;
     }
+
+
 
     private void initializeData(){
         events = new ArrayList<>();
@@ -58,7 +66,17 @@ public class HomeFragment extends Fragment {
 
     private void initializeAdapter(){
         RVAdapter adapter = new RVAdapter(events);
-        rv.setAdapter(adapter);
+        adapter.setHasStableIds(true);
+        adapter.SetOnItemClickListener(new RVAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Log.d("TAG",""+position);
+            }
+        });
+        AlphaInAnimationAdapter alphaAdapter = new AlphaInAnimationAdapter(adapter);
+        alphaAdapter.setDuration(1000);
+        alphaAdapter.setFirstOnly(false);
+        rv.setAdapter(alphaAdapter);
     }
 
 }
