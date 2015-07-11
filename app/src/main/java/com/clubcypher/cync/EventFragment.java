@@ -1,7 +1,10 @@
 package com.clubcypher.cync;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +18,7 @@ public class EventFragment extends Fragment {
 
     public EventFragment(){}
 
-
+    Intent intent;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,6 +32,7 @@ public class EventFragment extends Fragment {
 
         TextView name = (TextView) rootView.findViewById(R.id.eventName);
         ImageView img = (ImageView) rootView.findViewById(R.id.logo);
+        //Toolbar toolbar = (Toolbar) rootView.findViewById(R.id.toolbar);
 
         String eventName = "";
         switch (eventID){
@@ -66,6 +70,7 @@ public class EventFragment extends Fragment {
                 break;
 
         }
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(eventName);
         name.setText(eventName);
 
 
@@ -73,4 +78,26 @@ public class EventFragment extends Fragment {
     }
 
 
+    public void onBackPressed() {
+        // TODO Auto-generated method stub
+        //super.onBackPressed();
+        //Toast.makeText(getApplicationContext(), "click",2000).show();
+        String cameback="CameBack";
+        intent = new Intent(getActivity(),MainActivity.class);
+        intent.putExtra("Comingback", cameback);
+        startActivity(intent);
+    }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_BACK:
+                String cameback="CameBack";
+                intent = new Intent(getActivity(),MainActivity.class);
+                intent.putExtra("Comingback", cameback);
+                startActivity(intent);
+                return true;
+        }
+        return false;
+    }
 }

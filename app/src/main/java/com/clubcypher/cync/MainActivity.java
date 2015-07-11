@@ -2,6 +2,7 @@ package com.clubcypher.cync;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -34,9 +35,15 @@ public class MainActivity extends AppCompatActivity {
 
     Fragment fragment = new HomeFragment();
 
+    private static Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        MainActivity.context = getApplicationContext();
+
 
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -119,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
         }
         return eventName;
     }
+
+
     /**
      * Diplaying fragment view for selected nav drawer list item
      * */
@@ -128,7 +137,6 @@ public class MainActivity extends AppCompatActivity {
         switch (position) {
             case 0:
                 fragment = new HomeFragment();
-                toolbar.setTitle("(c)ync");
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
@@ -162,7 +170,6 @@ public class MainActivity extends AppCompatActivity {
                 bndl.putFloat("eventid", 3);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
-                toolbar.setTitle(getEventName(3));
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.ClkPrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.ClkPrimary));
@@ -173,8 +180,7 @@ public class MainActivity extends AppCompatActivity {
                 bndl.putFloat("eventid", 4);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
-                toolbar.setTitle(getEventName(4));
-                toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.CrePrimary)));
+               toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.CrePrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.CrePrimary));
                     getWindow().setStatusBarColor(getResources().getColor(R.color.CrePrimaryDark));
@@ -184,9 +190,8 @@ public class MainActivity extends AppCompatActivity {
                 bndl.putFloat("eventid", 5);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
-                toolbar.setTitle(getEventName(5));
                 //ActionBar bar = getActionBar();
-                toolbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF5722")));
+               toolbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF5722")));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.ResPrimary));
                     getWindow().setStatusBarColor(getResources().getColor(R.color.ResPrimaryDark));
@@ -198,7 +203,6 @@ public class MainActivity extends AppCompatActivity {
                 bndl.putFloat("eventid", 6);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
-                toolbar.setTitle(getEventName(6));
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.CrsPrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.CrsPrimary));
@@ -209,7 +213,6 @@ public class MainActivity extends AppCompatActivity {
                 bndl.putFloat("eventid", 7);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
-                toolbar.setTitle(getEventName(7));
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.CynPrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.CynPrimary));
@@ -220,7 +223,6 @@ public class MainActivity extends AppCompatActivity {
                 bndl.putFloat("eventid", 8);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
-                toolbar.setTitle(getEventName(8));
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.SrpPrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.SrpPrimary));
@@ -275,7 +277,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void switchContentI(int id, Fragment fragment) {
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.frame_container, fragment).commit();
+    }
 
+    public static Context getAppContext() {
+        return MainActivity.context;
+    }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
