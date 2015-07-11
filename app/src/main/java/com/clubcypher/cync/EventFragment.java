@@ -93,34 +93,42 @@ public class EventFragment extends Fragment implements ObservableScrollViewCallb
             case 1:
                 eventName = "(c)ode";
                 mImageView.setImageResource(R.drawable.codeposter);
+                mOverlayView.setBackgroundColor(getResources().getColor(R.color.CodePrimary));
                 break;
             case 2:
                 eventName = "Decypher";
                 mImageView.setImageResource(R.drawable.decypherposter);
+                mOverlayView.setBackgroundColor(getResources().getColor(R.color.DecPrimary));
                 break;
             case 3:
                 eventName = "(c)lick";
                 mImageView.setImageResource(R.drawable.clickposter);
+                mOverlayView.setBackgroundColor(getResources().getColor(R.color.ClkPrimary));
                 break;
             case 4:
                 eventName = "(c)reation";
                 mImageView.setImageResource(R.drawable.creationposter);
+                mOverlayView.setBackgroundColor(getResources().getColor(R.color.CrePrimary));
                 break;
             case 5:
                 eventName = "Respawn";
                 mImageView.setImageResource(R.drawable.respawnposter);
+                mOverlayView.setBackgroundColor(getResources().getColor(R.color.ResPrimary));
                 break;
             case 6:
                 eventName = "(c)yptcross";
                 mImageView.setImageResource(R.drawable.ccposter);
+                mOverlayView.setBackgroundColor(getResources().getColor(R.color.CrsPrimary));
                 break;
             case 7:
                 eventName = "(c)ynth";
                 mImageView.setImageResource(R.drawable.cynthposter);
+                mOverlayView.setBackgroundColor(getResources().getColor(R.color.CynPrimary));
                 break;
             case 8:
                 eventName = "Suprise Event";
                 mImageView.setImageResource(R.drawable.thposter);
+                mOverlayView.setBackgroundColor(getResources().getColor(R.color.SrpPrimary));
                 break;
 
         }
