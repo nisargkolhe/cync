@@ -2,6 +2,7 @@ package com.clubcypher.cync;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -137,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
         switch (position) {
             case 0:
                 fragment = new HomeFragment();
+                toolbar.setTitle("(c)ync");
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
@@ -261,9 +263,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (fragment != null) {
-            FragmentManager fragmentManager = getFragmentManager();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.frame_container, fragment).commit();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            //ft.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
+
+            //FragmentManager fragmentManager = getFragmentManager();
+
+            ft.replace(R.id.frame_container, fragment).commit();
             Log.e("MainActivity", "Success.");
             // update selected item and title, then close the drawer
             //result.setItemChecked(position, true);
