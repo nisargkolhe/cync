@@ -35,6 +35,9 @@ dependencies {
     compile 'jp.wasabeef:recyclerview-animators:1.2.1@aar'
     compile 'com.github.ksoichiro:android-observablescrollview:1.5.2'
     compile 'com.nineoldandroids:library:2.4.0'
+    compile ('com.github.florent37:materialviewpager:1.0.7@aar'){
+        transitive = true
+    }
 
 
 }

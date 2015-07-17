@@ -304,7 +304,8 @@ public class MainActivity extends AppCompatActivity {
         //handle the back press :D close the drawer first and if the drawer is closed close the activity
         if (result != null && result.isDrawerOpen()) {
             result.closeDrawer();
-        } else {
+        }
+        else {
             super.onBackPressed();
         }
     }
