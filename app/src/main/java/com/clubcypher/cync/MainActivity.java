@@ -264,7 +264,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (fragment != null) {
             FragmentTransaction ft = getFragmentManager().beginTransaction();
-            //ft.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
+            ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
 
             //FragmentManager fragmentManager = getFragmentManager();
 
