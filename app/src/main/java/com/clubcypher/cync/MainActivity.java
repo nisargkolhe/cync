@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             FragmentManager fragmentManager = getFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.frame_container, fragment).commit();
+                    .replace(R.id.frame_container, fragment,"(c)ync").commit();
         }
 
     }
@@ -135,10 +135,11 @@ public class MainActivity extends AppCompatActivity {
     public void displayView(int position) {
         // update the main content by replacing fragments
         Fragment fragment = null;
+        String fName ="";
         switch (position) {
             case 0:
                 fragment = new HomeFragment();
-                toolbar.setTitle("(c)ync");
+                fName = "(c)ync";
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
@@ -150,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
                 bndl.putFloat("eventid", 1);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
-                toolbar.setTitle(getEventName(1));
+                fName = getEventName(1);
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.CodePrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.CodePrimary));
@@ -161,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
                 bndl.putFloat("eventid", 2);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
-                toolbar.setTitle(getEventName(2));
+                fName = getEventName(2);
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.DecPrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.DecPrimary));
@@ -172,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
                 bndl.putFloat("eventid", 3);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
+                fName = getEventName(3);
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.ClkPrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.ClkPrimary));
@@ -182,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
                 bndl.putFloat("eventid", 4);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
+                fName = getEventName(4);
                toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.CrePrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.CrePrimary));
@@ -192,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
                 bndl.putFloat("eventid", 5);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
-                //ActionBar bar = getActionBar();
+                fName = getEventName(5);
                toolbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF5722")));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.ResPrimary));
@@ -205,6 +208,7 @@ public class MainActivity extends AppCompatActivity {
                 bndl.putFloat("eventid", 6);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
+                fName = getEventName(6);
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.CrsPrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.CrsPrimary));
@@ -215,6 +219,7 @@ public class MainActivity extends AppCompatActivity {
                 bndl.putFloat("eventid", 7);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
+                fName = getEventName(7);
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.CynPrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.CynPrimary));
@@ -225,6 +230,7 @@ public class MainActivity extends AppCompatActivity {
                 bndl.putFloat("eventid", 8);
                 fragment = new EventFragment();
                 fragment.setArguments(bndl);
+                fName = getEventName(8);
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.SrpPrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.SrpPrimary));
@@ -233,7 +239,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 11:
                 fragment = new ContactFragment();
-                toolbar.setTitle("Contact Us");
+                fName = "Contact Us";
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
@@ -242,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 12:
                 fragment = new ResultsFragment();
-                toolbar.setTitle("Results");
+                fName = "Results";
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
@@ -251,7 +257,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 14:
                 fragment = new RegisFragment();
-                toolbar.setTitle("Registrations");
+                fName = "Registrations";
                 toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
                 if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
@@ -261,14 +267,11 @@ public class MainActivity extends AppCompatActivity {
             default:
                 break;
         }
-
+        toolbar.setTitle(fName);
         if (fragment != null) {
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
-
-            //FragmentManager fragmentManager = getFragmentManager();
-
-            ft.replace(R.id.frame_container, fragment).commit();
+            ft.replace(R.id.frame_container, fragment,fName).commit();
             Log.e("MainActivity", "Success.");
             // update selected item and title, then close the drawer
             //result.setItemChecked(position, true);
@@ -280,12 +283,6 @@ public class MainActivity extends AppCompatActivity {
             // error in creating fragment
             Log.e("MainActivity", "Error in creating fragment");
         }
-    }
-
-    public void switchContentI(int id, Fragment fragment) {
-        FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.frame_container, fragment).commit();
     }
 
     public static Context getAppContext() {
@@ -302,8 +299,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //handle the back press :D close the drawer first and if the drawer is closed close the activity
+        HomeFragment myFragment = (HomeFragment)getFragmentManager().findFragmentByTag("(c)ync");
         if (result != null && result.isDrawerOpen()) {
             result.closeDrawer();
+        }
+        else if (myFragment == null) {
+            fragment = new HomeFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
+            ft.replace(R.id.frame_container, fragment).commit();
+            toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
+            if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
+                getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+            }
         }
         else {
             super.onBackPressed();
