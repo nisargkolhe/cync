@@ -32,7 +32,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.EventViewHolder> {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     // item clicked
-                    Toast.makeText(v.getContext(), currentEvent.name, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(v.getContext(), currentEvent.name, Toast.LENGTH_SHORT).show();
                     MainActivity mainActivity = (MainActivity) view.getContext();
                     mainActivity.displayView(currentEvent.id);
                     //MainActivity.passIdToDV(currentEvent.id);
