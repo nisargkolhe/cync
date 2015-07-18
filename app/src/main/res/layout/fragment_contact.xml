@@ -23,33 +23,50 @@
                 android:layout_marginBottom="20dp"
                 android:textColor="#0f0f0f" />
 
-            <EditText
+
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
                 android:padding="15dp"
-                android:id="@+id/txtEmail"
+                android:id="@+id/textinputlayout"
                 android:layout_below="@+id/textView5"
-                android:layout_centerHorizontal="true"
-                android:hint="Email" />
-            <EditText
+                android:layout_centerHorizontal="true">
+
+                <EditText
+                    android:id="@+id/txtSubject"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Subject"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginTop="45dp"
+                    />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/textinputlayout"
                 android:padding="15dp"
-                android:id="@+id/txtQuery"
-                android:layout_below="@+id/txtEmail"
-                android:layout_alignLeft="@+id/txtEmail"
-                android:layout_alignStart="@+id/txtEmail"
-                android:hint="Your Query" />
-            <com.gc.materialdesign.views.ButtonRectangle
+                android:id="@+id/queryLayout"
+                android:layout_centerHorizontal="true">
+
+                <EditText
+                    android:id="@+id/txtQuery"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Your Query"
+                    android:inputType="textMultiLine"
+                    android:layout_marginTop="45dp"/>
+            </android.support.design.widget.TextInputLayout>
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Submit"
+                android:textColor="@android:color/white"
                 android:id="@+id/button"
                 android:layout_weight="1"
-                android:layout_below="@+id/txtQuery"
+                android:layout_below="@+id/queryLayout"
                 android:layout_centerHorizontal="true"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/raised_button_background"
                 android:paddingRight="20dp"
                 android:paddingLeft="20dp"
                 android:layout_marginTop="20dp"

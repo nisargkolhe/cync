@@ -36,4 +36,8 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:navigationBarColor">@color/ResPrimary</item>
     </style>
+
+    <style name="Button" parent="android:style/Widget.Material.Button">
+        <item name="android:background">@drawable/raised_button_background</item>
+    </style>
 </resources>
