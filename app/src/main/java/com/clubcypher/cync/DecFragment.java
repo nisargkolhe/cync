@@ -3,13 +3,16 @@ package com.clubcypher.cync;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 /**
  * Created by nisargkolhe on 7/9/15.
@@ -31,13 +34,31 @@ public class DecFragment extends Fragment {
         //setContentView(R.layout.webview);
         pd = (ProgressBar)rootView.findViewById(R.id.progressbar_Horizontal);
 
+        class MyJavaScriptInterface
+        {
+            @JavascriptInterface
+            @SuppressWarnings("unused")
+            public void processHTML(String html)
+            {
+                // process the html as needed by the app
+                Toast.makeText(getActivity(),html,Toast.LENGTH_SHORT).show();
+                Log.e("HTML",html);
+            }
+        }
+
         webView = (WebView) rootView.findViewById(R.id.webView1);
         webView.getSettings().setJavaScriptEnabled(true);
-        /*webView.setWebChromeClient(new ChromeClient());*/
+        webView.addJavascriptInterface(new MyJavaScriptInterface(), "HTMLOUT");
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 return false;
+            }
+            @Override
+            public void onPageFinished(WebView view, String url)
+            {
+        /* This call inject JavaScript into the page which just finished loading. */
+                webView.loadUrl("javascript:window.HTMLOUT.processHTML(document.getElementsByTagName('c')[0].innerHTML);");
             }
         });
         webView.setWebChromeClient(new WebChromeClient() {
