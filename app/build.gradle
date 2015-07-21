@@ -38,6 +38,7 @@ dependencies {
     compile ('com.github.florent37:materialviewpager:1.0.7@aar'){
         transitive = true
     }
+    compile 'com.github.castorflex.smoothprogressbar:library:1.1.0'
 
 
 }
