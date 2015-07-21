@@ -36,6 +36,11 @@ public class EventFragment extends Fragment implements ObservableScrollViewCallb
     private View mOverlayView;
     private ObservableScrollView mScrollView;
     private TextView mTitleView;
+    private TextView venue;
+    private TextView time;
+    private TextView elg;
+    private TextView desc;
+    private TextView rules;
     private View mFab;
     private int mActionBarSize;
     private int mFlexibleSpaceShowFabOffset;
@@ -67,6 +72,13 @@ public class EventFragment extends Fragment implements ObservableScrollViewCallb
         mScrollView = (ObservableScrollView) rootView.findViewById(R.id.scroll);
         mScrollView.setScrollViewCallbacks(this);
         mTitleView = (TextView) rootView.findViewById(R.id.title);
+
+        venue = (TextView) rootView.findViewById(R.id.txtVenue);
+        time = (TextView) rootView.findViewById(R.id.txtTime);
+        elg = (TextView) rootView.findViewById(R.id.txtClass);
+        desc = (TextView) rootView.findViewById(R.id.longDesc);
+        rules = (TextView) rootView.findViewById(R.id.txtRules);
+
         //mTitleView.setText(getActivity().getTitle());
         //setTitle(null);
 
@@ -99,36 +111,71 @@ public class EventFragment extends Fragment implements ObservableScrollViewCallb
                 break;
             case 2:
                 eventName = "Decypher";
+                venue.setText(R.string.dec_venue);
+                time.setText(R.string.dec_time);
+                desc.setText(R.string.dec_desc);
+                elg.setText(R.string.dec_elg);
+                rules.setText(R.string.dec_rules);
                 mImageView.setImageResource(R.drawable.decypherposter);
                 mOverlayView.setBackgroundColor(getResources().getColor(R.color.DecPrimary));
                 break;
             case 3:
                 eventName = "(c)lick";
+                venue.setText(R.string.click_venue);
+                time.setText(R.string.click_time);
+                desc.setText(R.string.click_desc);
+                elg.setText(R.string.click_elg);
+                rules.setText(R.string.click_rules);
                 mImageView.setImageResource(R.drawable.clickposter);
                 mOverlayView.setBackgroundColor(getResources().getColor(R.color.ClkPrimary));
                 break;
             case 4:
                 eventName = "(c)reation";
+                venue.setText(R.string.create_venue);
+                time.setText(R.string.create_time);
+                desc.setText(R.string.create_desc);
+                elg.setText(R.string.create_elg);
+                rules.setText(R.string.create_rules);
                 mImageView.setImageResource(R.drawable.creationposter);
                 mOverlayView.setBackgroundColor(getResources().getColor(R.color.CrePrimary));
                 break;
             case 5:
                 eventName = "Respawn";
+                venue.setText(R.string.resp_venue);
+                time.setText(R.string.resp_time);
+                desc.setText(R.string.resp_desc);
+                elg.setText(R.string.resp_elg);
+                rules.setText(R.string.resp_rules);
                 mImageView.setImageResource(R.drawable.respawnposter);
                 mOverlayView.setBackgroundColor(getResources().getColor(R.color.ResPrimary));
                 break;
             case 6:
                 eventName = "(c)yptcross";
+                venue.setText(R.string.cc_venue);
+                time.setText(R.string.cc_time);
+                desc.setText(R.string.cc_desc);
+                elg.setText(R.string.cc_elg);
+                rules.setText(R.string.cc_rules);
                 mImageView.setImageResource(R.drawable.ccposter);
                 mOverlayView.setBackgroundColor(getResources().getColor(R.color.CrsPrimary));
                 break;
             case 7:
                 eventName = "(c)ynth";
+                venue.setText(R.string.cynth_venue);
+                time.setText(R.string.cynth_time);
+                desc.setText(R.string.cynth_desc);
+                elg.setText(R.string.cynth_elg);
+                rules.setText(R.string.cynth_rules);
                 mImageView.setImageResource(R.drawable.cynthposter);
                 mOverlayView.setBackgroundColor(getResources().getColor(R.color.CynPrimary));
                 break;
             case 8:
                 eventName = "Suprise Event";
+                venue.setText("TBD");
+                time.setText(R.string.dec_time);
+                desc.setText("???");
+                elg.setText("Random");
+                rules.setText("Will be announced on spot.");
                 mImageView.setImageResource(R.drawable.thposter);
                 mOverlayView.setBackgroundColor(getResources().getColor(R.color.SrpPrimary));
                 break;

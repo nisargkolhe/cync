@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:padding="2dp"
+
     android:background="#f0f0f0"
     android:orientation="vertical"
     >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/colorPrimary"></RelativeLayout>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:src="@drawable/cync"/>
+        android:src="@drawable/cyncwhite"/>
     <android.support.v7.widget.RecyclerView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:layout_marginTop="150dp"
         android:id="@+id/rv"
 
         >
 
     </android.support.v7.widget.RecyclerView>
-
+    </FrameLayout>
 
 </LinearLayout>
