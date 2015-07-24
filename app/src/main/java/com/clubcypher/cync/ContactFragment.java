@@ -37,7 +37,7 @@ public class ContactFragment extends Fragment {
     }
 
     protected void sendEmail(String subject, String body) {
-        String[] recipients = {"admin@clubcypher.com","nisargkolhe@gmail.com"};
+        String[] recipients = {"admin@clubcypher.com"};
         Intent email = new Intent(Intent.ACTION_SEND, Uri.parse("mailto:"));
         email.setType("message/rfc822");
         email.putExtra(Intent.EXTRA_EMAIL, recipients);

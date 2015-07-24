@@ -51,14 +51,14 @@ public class HomeFragment extends Fragment {
 
     private void initializeData(){
         events = new ArrayList<>();
-        events.add(new Event("(c)ode",R.drawable.codeposter,"The Programming Event",2));
-        events.add(new Event("Respawn",R.drawable.respawnposter,"The Gaming Event",6));
-        events.add(new Event("(c)lick",R.drawable.clickposter,"The Photography Event",4));
-        events.add(new Event("(c)reation",R.drawable.creationposter,"The Graphic Designing Event",5));
-        events.add(new Event("(c)rypt(c)ross",R.drawable.ccposter,"Cryptic Crossword",7));
-        events.add(new Event("(c)ynth",R.drawable.cynthposter,"The EDM Making Event",8));
-        events.add(new Event("Decypher",R.drawable.decypherposter,"The Online Cryptic Hunt",3));
-        events.add(new Event("Suprise Event",R.drawable.thposter,"???",9));
+        events.add(new Event("Decypher",R.drawable.decypherposter,"The Online Cryptic Hunt",1));
+        events.add(new Event("(c)ode",R.drawable.codeposter,"The Programming Event",3));
+        events.add(new Event("(c)lick",R.drawable.clickposter,"The Photography Event",5));
+        events.add(new Event("(c)reation",R.drawable.creationposter,"The Graphic Designing Event",6));
+        events.add(new Event("Respawn",R.drawable.respawnposter,"The Gaming Event",7));
+        events.add(new Event("(c)rypt(c)ross",R.drawable.ccposter,"Cryptic Crossword",8));
+        events.add(new Event("(c)ynth",R.drawable.cynthposter,"The EDM Making Event",9));
+        events.add(new Event("Suprise Event",R.drawable.thposter,"???",10));
 
 
 

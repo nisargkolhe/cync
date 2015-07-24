@@ -308,6 +308,7 @@ public class MainActivity extends AppCompatActivity {
             ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
             ft.replace(R.id.frame_container, fragment).commit();
             toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
+            toolbar.setTitle("(c)ync");
             if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
                 getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));

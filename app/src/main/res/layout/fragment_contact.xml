@@ -111,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/lblPhoneCon"
-                android:text="Anurag Sehgal(HOD Comp. Sci.) : 123-4567"
+                android:text="Anurag Sehgal(HOD Comp. Sci.) : 78-69-119509"
                 android:layout_below="@+id/lblPhone"
                 android:textAlignment="center"
                 android:layout_margin="15dp"

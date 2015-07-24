@@ -11,7 +11,7 @@
     <string name="sticky_header">Sticky</string>
 
     <!--Code strings-->
-    <string name="code_venue">Senior Computer Lab</string>
+    <string name="code_venue">Senior Computer Lab(Junior College)</string>
     <string name="code_time">10:00 AM</string>
     <string name="code_elg">10th+</string>
     <string name="code_desc">Most software today are very much identical to an Egyptian pyramid with millions of bricks piled on top of each other, with no structural integrity, but just done by brute force and thousands of slaves, and this calls for a need for better code. This competition will test the programming skills of the participants by giving them a task and the tools to make a program accurately and ef?ciently.</string>
@@ -21,18 +21,18 @@
 4. Participants will have to use the PCs provided, use of personal computer/equipment will not be permitted.</string>
 
     <!--Respawn strings-->
-    <string name="resp_venue">Junior Computer Lab</string>
+    <string name="resp_venue">Senior Computer Lab(Quadrangle)</string>
     <string name="resp_time">10:00 AM</string>
     <string name="resp_elg">10th+</string>
     <string name="resp_desc">Games give you a chance to excel, and if you are playing in good company you don not even mind if you lose because you had the enjoyment of the company during the course of the game. This event will be team based and will require co-operation between the team members and necessary skills to win the competition. Teams representing their schools will go 1 on 1 each other in elimination matches. Team winning the ?nal match will be declared as the winner.</string>
-    <string name="resp_rules">1. Participants will be playing Counter Strike 1.6, a ?rst person shooter supposed to be played in teams.\r\n
+    <string name="resp_rules">1. Participants will be playing Counter Strike 1.6, a first person shooter supposed to be played in teams.\r\n
 2. There will be various elimination rounds depending on the no. of participating teams leading to 1 winning team.\r\n
 3. Participant will have to use the PCs provided, use of personal computers would not be permitted.\r\n
-4. Participants can bring their personal mouse, keyboard and headset will be permitted, any accessory/equipment other than mentioned above would not be permitted.\r\n
+4. Participants can bring their personal mouse, keyboard and headset, any accessory/equipment other than mentioned above would not be permitted.\r\n
 5. One match against two teams will consist of 3 rounds, out of which the team winning more rounds will be considered as the winner.</string>
 
     <!--Click strings-->
-    <string name="click_venue">-</string>
+    <string name="click_venue">Amphitheatre</string>
     <string name="click_time">10:00 AM</string>
     <string name="click_elg">10th+</string>
     <string name="click_desc">Photography is about finding out what can happen in the frame, when you put four edges around some facts, you change those facts. Participants skilled in photography will go through these tasks which will test their skills in all situations for getting the best photo at the best timings. A topic will be given to the participants on the spot (eg. Unity in Diversity) and will be allowed to roam in the school campus, showing their skills by bringing the best photo possible.</string>
@@ -59,12 +59,28 @@
 2. Causing disruption to other teams will not be tolerated.</string>
 
     <!--Cynth strings-->
-    <string name="cynth_venue">Junior Computer Lab</string>
+    <string name="cynth_venue">Middle Computer Lab</string>
     <string name="cynth_time">10:00 AM</string>
     <string name="cynth_elg">9th-10th/11th-12th</string>
     <string name="cynth_desc">TElectronic music uses pure sounds, completely calibrated. You have to think digitally, as it were, in a way that allowed you to extend serial ideas into other parameters through technology. Participants will be required to create pieces of music on the spot using an audio editing software in the EDM (Electronic Dance Music) umbrella of a wide range of genres ranging from house to trap. They will be provided with a sound generating application, whose sounds they can record via another application provided by us, which then has to be made in a complete song.</string>
-    <string name="cynth_rules">1. Problems to be solved in the stipulated time limit only.\r\n
-2. Causing disruption to other teams will not be tolerated.</string>
+    <string name="cynth_rules">1. The participants would be given around 6-8 melodies in basic MIDI (Musical Instrument Digital Interface) format. They have to choose any one of them.\r\n
+2. The melodies provided would be 3 – 9 measures (8 beats – 32 beats) long.\r\n
+3. The participants can change the tempo according to the track they are making.\r\n
+4. The melody chosen can be modified, but the actual composition should remain the same.\r\n
+5. Participants can use the provided VSTs to make the melody sound good.\r\n
+6. VST’s provided will be the stock ones + some useful ones like Nexus 2, Sylenth2.\r\n
+7. The participants can make use of Hardware (MIDI Input devices) Devices according to their requirements.\r\n
+8. The created track should be of time frame of minimum 100s (1 min 40s) and maximum 180s (3 mins).\r\n
+9. Use of premade loops provided in the software, or brought from external sources if caught, will result in immediate disqualification of the team.\r\n
+10. At the end of the event, the participants have to save their .flp files and also render the track mp3 in 320kbps. The file names should be in the following manner-\r\n
+   a. Begin with the team name and class and then the melody number which they have used in their    track.\r\n
+   b. for example: - if the team is from DPS Bhopal and used the melody number 4 , they files names  should be as such – DpsTeam4.Flp and DpsTeam4.Mp3\r\n
+11.  If the judges, volunteers, Event coordinators find the teams using any wrong means and / or violating any of the above rules will be disqualified immediately.\r\n
+12.  The event will have a limited time of 2 hours, under which the teams have to choose the melody to their liking and convert it into a track. After the timer ends, the teams have to STOP making their track and immediately start exporting and saving their files.\r\n
+13. The track made by the teams can be any type of Electronic music track namely, house, progressive house, trap, electro house etc.\r\n
+14. The tracks will be judged on the basis of innovation, sounds, and effects used in its making. The judges will give separate points on these and several other bases like originality, software knowledge etc.\r\n
+15. After the judgment, the winners selected to be the 1st and 2nd will be given their respective prizes.\r\n
+16. The winners announcement will take place altogether after the events in the school auditorium.</string>
 
     <!--Decypher strings-->
     <string name="dec_venue">Online</string>
